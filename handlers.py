@@ -47,7 +47,7 @@ async def get_db_data(clbck: types.CallbackQuery, state: FSMContext):
     with get_session() as session:
         db_data = session.query(Item_line).order_by(Item_line.id.desc()).limit(5).all()
         if not db_data:
-            await clbck.message.edit_text(text['no_data'])
+            return await clbck.message.edit_text(text['no_data'])
         result = []
         for item in db_data:
             result.append(str(item))

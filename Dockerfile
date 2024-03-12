@@ -41,7 +41,7 @@ RUN python3 -m pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
-RUN useradd -u 5678 appuser && chown -R appuser /app
+RUN useradd -m -u 5678 appuser && chown -R appuser:appuser /app && chmod -R 755 /app
 USER appuser
 
 # Set the default command to run when the container starts

@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.7'
 
 services:
   db:
@@ -14,9 +14,10 @@ services:
 
   app:
     build: .
-    command: python main.py
+    command: python3 main.py
     volumes:
       - .:/app
+      - ./logs:/app/logs
     depends_on:
       - db
     environment:
