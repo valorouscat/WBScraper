@@ -1,0 +1,6 @@
+/.dockerignore
+/.env
+/.venv
+/logs.log
+/middlewares.py
+/__pycache__
